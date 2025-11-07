@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background-size:300% 300%;
+    background: linear-gradient(176deg, rgba(30, 51, 192, 1) 0%, rgba(169, 116, 186, 1) 100%);
+    animation: bgMove 25s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 10%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c1a6ff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left; /* Centraliza o texto */
+  padding: 0 10%;
+  gap: 25px;
+}
+
+.titulo-principal {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.subtitulo {
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.descricao {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  line-height: 1.5;
+  color: #ffffff;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.texto-secundario {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin-top: 10px;
+  color: #e0e0e0;
+  line-height: 1.6;
+  animation: fadeInUp 1.8s ease forwards;
+}
+
+.button-chat{
+ position: fixed;
+ bottom: 25px;
+ right: 25px;
+ width: 60px;
+ height: 60px;
+ background: linear-gradient(135deg, #4b6cb7, #182848);
+ color: white;
+ font-size: 28px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 50%;
+ cursor: pointer;
+ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+ transition: transform 0.3s ease, background 0.3s ease;
+ z-index: 2000;
+}
+
+.button-chat:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #5d82e2, #3d2179);
+}
+
+.pagina-chat {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 320px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.4s ease forwards;
+  color: #fff;
+  z-index: 3000;
+}
+
+.chat-header {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.chat-header button:hover {
+  transform: scale(1.2);
+}
+
+.chat-body {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.chat-input button {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0 18px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* animação já existente */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 60px 10%;
+  text-align: center;
+  color: #fff;
+}
+
+footer h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.footer-texto {
+  font-size: 1.1rem;
+  color: #d8d8d8;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.3s ease forwards;
+}
+
+.contato-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.contato-lista li {
+  font-size: 1rem;
+  color: #c9b6ff;
+}
+
+.contato-lista a {
+  color: #c9b6ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contato-lista a:hover {
+  color: #ffffff;
+}
+
+.icone-lista {
+  width: 20px; 
+  height: auto;
+  vertical-align: middle; 
+  margin-right: 5px;
+}
+
+
+
+
