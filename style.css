@@ -1,13 +1,15 @@
-*{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+/*RESET E ESTRUTURA BÁSICA */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 html, body {
   height: 100%;
 }
 
-main{
+main {
   flex: 1;
 }
 
@@ -18,15 +20,16 @@ canvas {
   height: 100%;
 }
 
+/* BODY E BACKGROUND*/
 body {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    overflow-x: hidden;
-    background-size: 300% 300%;
-    background: linear-gradient(176deg, rgba(30, 51, 192, 1) 0%, rgba(169, 116, 186, 1) 100% );
-    animation: bgMove 25s ease infinite;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  overflow-x: hidden;
+  background-size: 300% 300%;
+  background: linear-gradient(176deg, rgba(30, 51, 192, 1) 0%, rgba(169, 116, 186, 1) 100%);
+  animation: bgMove 25s ease infinite;
 }
 
 @keyframes bgMove {
@@ -35,6 +38,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* CABEÇALHO E NAVEGAÇÃO */
 header {
   display: flex;
   justify-content: space-between;
@@ -42,7 +46,7 @@ header {
   padding: 25px 10%;
   backdrop-filter: blur(8px);
   background: rgba(0, 0, 0, 0.15);
-  position:absolute;
+  position: absolute;
   top: 0;
   width: 100%;
   z-index: 1000;
@@ -66,16 +70,17 @@ nav a:hover {
   color: #c1a6ff;
 }
 
+/* SEÇÃO HERO */
 .hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  text-align: left; /* Centraliza o texto */
+  text-align: left;
   padding: 0 10%;
   gap: 25px;
-  margin-top:10%;
+  margin-top: 10%;
 }
 
 .titulo-principal {
@@ -109,23 +114,24 @@ nav a:hover {
   animation: fadeInUp 1.8s ease forwards;
 }
 
-.button-chat{
- position: fixed;
- bottom: 25px;
- right: 25px;
- width: 60px;
- height: 60px;
- background: linear-gradient(135deg, #4b6cb7, #182848);
- color: white;
- font-size: 28px;
- display: flex;
- align-items: center;
- justify-content: center;
- border-radius: 50%;
- cursor: pointer;
- box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
- transition: transform 0.3s ease, background 0.3s ease;
- z-index: 2000;
+/* BOTÃO DO CHAT FLUTUANTE */
+.button-chat {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 2000;
 }
 
 .button-chat:hover {
@@ -133,6 +139,7 @@ nav a:hover {
   background: linear-gradient(135deg, #5d82e2, #3d2179);
 }
 
+/* JANELA DO CHAT */
 .pagina-chat {
   position: fixed;
   bottom: 100px;
@@ -213,6 +220,7 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* ANIMAÇÕES */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -224,8 +232,6 @@ nav a:hover {
   }
 }
 
-
-/* animação já existente */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -237,16 +243,16 @@ nav a:hover {
   }
 }
 
+/*RODAPÉ */
 footer {
-    background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(8px);
-    padding: 60px 10%; /* ✅ 10%, não 100% */
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    margin-top: 10%; /* ✅ garante que o footer fique no final */
-    height: 100%; /* ✅ só o necessário */
-   
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  padding: 60px 10%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  margin-top: 10%;
+  height: 100%;
 }
 
 footer h2 {
@@ -291,13 +297,13 @@ footer h2 {
 }
 
 .icone-lista {
-  width: 20px; 
+  width: 20px;
   height: auto;
-  vertical-align: middle; 
+  vertical-align: middle;
   margin-right: 5px;
 }
 
-/* ===== MENU HAMBÚRGUER ===== */
+/*MENU HAMBÚRGUER */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -308,8 +314,6 @@ footer h2 {
   z-index: 1100;
 }
 
-
-/* Barras do ícone */
 .menu-toggle span {
   position: absolute;
   width: 100%;
@@ -319,25 +323,18 @@ footer h2 {
   transition: all 0.3s ease;
 }
 
-/* Posições das barras */
-.menu-toggle span:nth-child(1) {
-  top: 0;
-}
-.menu-toggle span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.menu-toggle span:nth-child(3) {
-  bottom: 0;
-}
+.menu-toggle span:nth-child(1) { top: 0; }
+.menu-toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menu-toggle span:nth-child(3) { bottom: 0; }
 
-/* Animação para o “X” */
 .menu-toggle.open span:nth-child(1) {
   transform: rotate(45deg) translateY(8px);
 }
+
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
+
 .menu-toggle.open span:nth-child(3) {
   transform: rotate(-45deg) translateY(-8px);
 }
@@ -346,7 +343,7 @@ footer h2 {
   transform: scale(1.1);
 }
 
-/* ===== RESPONSIVIDADE ===== */
+/*RESPONSIVIDADE */
 @media (max-width: 900px) {
   header {
     padding: 20px 8%;
@@ -381,7 +378,6 @@ footer h2 {
     display: flex;
   }
 
-  /* Ajustes do hero para telas pequenas */
   .hero {
     height: auto;
     padding: 130px 8% 80px;
@@ -431,7 +427,7 @@ footer h2 {
   }
 }
 
-/* ===== ANIMAÇÃO DE SLIDE DO MENU ===== */
+/* ANIMAÇÃO DO MENU MOBILE */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -442,6 +438,8 @@ footer h2 {
     transform: translateY(0);
   }
 }
-.container{
+
+/*CONTAINERS EXTRAS */
+.container {
   margin-top: 20px;
 }
