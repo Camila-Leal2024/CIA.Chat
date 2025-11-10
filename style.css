@@ -133,7 +133,7 @@ nav a:hover {
 }
 
 .chat-header {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.15);
   padding: 12px 15px;
   display: flex;
   justify-content: space-between;
@@ -182,7 +182,7 @@ nav a:hover {
 }
 
 .chat-input button {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.15);
   border: none;
   padding: 0 18px;
   color: #fff;
@@ -420,6 +420,7 @@ footer h2 {
     transform: translateY(0);
   }
 }
+
 
 
 
