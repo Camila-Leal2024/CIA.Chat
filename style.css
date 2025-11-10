@@ -163,6 +163,7 @@ nav a:hover {
   padding: 15px;
   overflow-y: auto;
   font-size: 0.95rem;
+  background: #DCC6F0;
 }
 
 .chat-input {
@@ -419,6 +420,7 @@ footer h2 {
     transform: translateY(0);
   }
 }
+
 
 
 
