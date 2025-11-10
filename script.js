@@ -1,22 +1,29 @@
+// ===== ROLAGEM SUAVE =====
 const links = document.querySelectorAll("nav a[href^='#']");
-  
+
 links.forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href");
-      const targetSection = document.querySelector(targetId);
-  
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop - 70,
-          behavior: "smooth"
-        });
-      }
-    });
+  link.addEventListener("click", function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 70,
+        behavior: "smooth"
+      });
+    }
+
+    // Fecha o menu ao clicar (em telas pequenas)
+    const navMenu = document.getElementById("navMenu");
+    if (navMenu.classList.contains("active")) {
+      navMenu.classList.remove("active");
+      document.getElementById("menuToggle").classList.remove("open");
+    }
+  });
 });
 
 // ===== EFEITO DE FUNDO LEVE (PARTÍCULAS) =====
-
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const ctx = canvas.getContext('2d');
@@ -60,6 +67,16 @@ function animateParticles() {
 }
 animateParticles();
 
+// ===== MENU HAMBÚRGUER =====
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.classList.toggle("open"); // adiciona classe pra animação ☰ → X
+  });
+}
 
 // ===== ABRIR / FECHAR CHAT =====
 document.addEventListener("DOMContentLoaded", () => {
@@ -81,5 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("❌ Elementos do chat não encontrados!");
   }
 });
+
 
 
