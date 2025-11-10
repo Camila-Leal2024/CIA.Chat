@@ -274,6 +274,117 @@ footer h2 {
   margin-right: 5px;
 }
 
+/* ===== MENU HAMBÚRGUER ===== */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 900px) {
+  header {
+    padding: 20px 8%;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 0;
+    border-radius: 0 0 15px 15px;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  nav a {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  /* Ajustes do hero para telas pequenas */
+  .hero {
+    height: auto;
+    padding: 130px 8% 80px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .titulo-principal,
+  .subtitulo {
+    font-size: 2.2rem;
+  }
+
+  .descricao {
+    font-size: 1.1rem;
+  }
+
+  .texto-secundario {
+    font-size: 1rem;
+  }
+
+  .pagina-chat {
+    width: 90%;
+    right: 5%;
+  }
+
+  footer {
+    padding: 50px 8%;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-principal,
+  .subtitulo {
+    font-size: 1.8rem;
+  }
+
+  .descricao {
+    font-size: 1rem;
+  }
+
+  .texto-secundario {
+    font-size: 0.95rem;
+  }
+
+  .contato-lista li {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== ANIMAÇÃO DE SLIDE DO MENU ===== */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 
