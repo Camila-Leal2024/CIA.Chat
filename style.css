@@ -353,7 +353,7 @@ footer h2 {
     position: absolute;
     top: 80px;
     right: 0;
-    background: rgb(128 99 137 / 55%);
+    background: rgb(128 99 137 , 55%);
     backdrop-filter: blur(10px);
     width: 100%;
     display: none;
@@ -443,4 +443,5 @@ footer h2 {
 .container {
   margin-top: 20px;
 }
+
 
