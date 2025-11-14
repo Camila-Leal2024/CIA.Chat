@@ -153,10 +153,15 @@ nav a:hover {
   flex-direction: column;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   animation: fadeIn 0.4s ease forwards;
-  color: #fff;
+  color: rgba(30, 51, 192, 1);
   z-index: 3000;
 }
-
+.logo{
+  color: #fff;
+}
+.logoChat{
+  color: #fff;
+}
 .chat-header {
   background: #6069A4;
   padding: 12px 15px;
@@ -183,16 +188,97 @@ nav a:hover {
   transform: scale(1.2);
 }
 
+/*CHAT-BODY E MENSAGENS*/
+
 .chat-body {
   flex: 1;
   padding: 15px;
   overflow-y: auto;
   font-size: 0.95rem;
-  background: #DCC6F0;
+  background: #dcc6f0;
 }
 
+/*BALÕES DE MENSAGEM*/
+.mensagem{
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  position: relative;
+
+}
+
+/*MENSAGEM RECEBIDA*/
+
+.mensagem-rcb{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mensagem-rcb .bolha {
+  background:#ffffff ;
+  color: rgba(30, 51, 192, 1);
+  border-radius: 16px;
+  padding: 10px 14px;
+  max-width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.mensagem-rcb .avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right:-8px;
+  flex-shrink: 0; /*Garante que a imagem não encolha*/
+}
+
+/*MENSAGEM ENVIADA*/
+
+.mensagem-env {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.mensagem-env .bolha{
+  background:#7886af;
+  color: rgb(252, 252, 252);
+  border-radius: 16px;
+  padding: 10px 14px;
+  max-width: 75%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+
+}
+
+.mensagem-env .avatarAluno{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: -8px;
+}
+
+.bolha .time{
+  font-size: 11px;
+  color: #6b7280;
+  align-self: flex-end;
+}
+
+/*BARRA DE ENVIO DE MENSAGEM*/
 .chat-input {
   display: flex;
+  background: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -217,7 +303,7 @@ nav a:hover {
 }
 
 .chat-input button:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #2e3357;
 }
 
 /* ANIMAÇÕES */
@@ -353,8 +439,7 @@ footer h2 {
     position: absolute;
     top: 80px;
     right: 0;
-    background: rgb(128 99 137 , 55%);
-    backdrop-filter: blur(10px);
+    background: rgb(128 99 137 / 55%);
     width: 100%;
     display: none;
     flex-direction: column;
